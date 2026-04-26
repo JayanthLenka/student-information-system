@@ -1,0 +1,122 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    string rollNo, name, aadhaarNo, phoneNo, email;
+    Node* next;
+};
+
+Node* head = NULL;
+
+// Add student
+void addStudent() {
+    Node* newNode = new Node();
+
+    cout << "\nEnter Roll No: ";
+    cin >> newNode->rollNo;
+
+    cout << "Enter Name: ";
+    cin.ignore();
+    getline(cin, newNode->name);
+
+    cout << "Enter Aadhaar No: ";
+    getline(cin, newNode->aadhaarNo);
+
+    cout << "Enter Phone No: ";
+    getline(cin, newNode->phoneNo);
+
+    cout << "Enter Email ID: ";
+    getline(cin, newNode->email);
+
+    newNode->next = NULL;
+
+    if (head == NULL) {
+        head = newNode;
+    } else {
+        Node* temp = head;
+        while (temp->next != NULL)
+            temp = temp->next;
+        temp->next = newNode;
+    }
+
+    cout << "Student Added Successfully!\n";
+}
+
+// View specific student
+void viewStudent() {
+    string roll;
+    cout << "\nEnter Roll No to view: ";
+    cin >> roll;
+
+    Node* temp = head;
+    while (temp != NULL) {
+        if (temp->rollNo == roll) {
+            cout << "\n--- Student Details ---\n";
+            cout << "Roll No: " << temp->rollNo << endl;
+            cout << "Name: " << temp->name << endl;
+            cout << "Aadhaar No: " << temp->aadhaarNo << endl;
+            cout << "Phone No: " << temp->phoneNo << endl;
+            cout << "Email: " << temp->email << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+
+    cout << "Student not found!\n";
+}
+
+// Modify student
+void modifyStudent() {
+    string roll;
+    cout << "\nEnter Roll No to modify: ";
+    cin >> roll;
+
+    Node* temp = head;
+    while (temp != NULL) {
+        if (temp->rollNo == roll) {
+            cout << "Enter New Name: ";
+            cin.ignore();
+            getline(cin, temp->name);
+
+            cout << "Enter New Aadhaar No: ";
+            getline(cin, temp->aadhaarNo);
+
+            cout << "Enter New Phone No: ";
+            getline(cin, temp->phoneNo);
+
+            cout << "Enter New Email: ";
+            getline(cin, temp->email);
+
+            cout << "Details Updated Successfully!\n";
+            return;
+        }
+        temp = temp->next;
+    }
+
+    cout << "Student not found!\n";
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n===== MENU =====\n";
+        cout << "1. Add Student\n";
+        cout << "2. View Student\n";
+        cout << "3. Modify Student\n";
+        cout << "4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: addStudent(); break;
+            case 2: viewStudent(); break;
+            case 3: modifyStudent(); break;
+            case 4: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}
