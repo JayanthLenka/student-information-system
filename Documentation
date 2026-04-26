@@ -63,4 +63,78 @@ Go to End
 Step 5: End
 
 FLOWCHART:-
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/431a9294-e19e-4281-8b51-e5fbefeda2e2" />
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/499649d4-236c-4ab3-81a2-d51ff3956da3" />
+
+METHODOLOGY:-
+Methodology:
+1. Overview
+The program is designed to manage student records using a singly linked list. It allows the user to perform operations such as adding, viewing, and modifying student details through a menu-driven interface.
+
+2. Data Structure Used
+A structure Node is defined to store:
+
+Roll Number
+Name
+Aadhaar Number
+Phone Number
+Email
+
+•Each node contains a pointer next to link to the next node.
+•A global pointer head is used to store the first node of the list.
+
+3. Working Principle
+a) Menu-Driven Execution
+The program runs inside a do-while loop.
+
+•A menu is displayed repeatedly until the user selects Exit.
+•A switch-case is used to perform operations based on user choice.
+
+b) Adding a Student
+A new node is created dynamically using new.
+•User inputs all student details.
+
+If the list is empty:
+•The new node becomes the head.
+
+Otherwise:
+•The list is traversed to the last node.
+•The new node is appended at the end.
+•This maintains the list in insertion order.
+
+c) Viewing a Student
+The user enters a Roll Number.
+•The list is traversed from the head node.
+
+Each node is checked:
+
+•If a match is found → student details are displayed.
+
+•If traversal ends without a match → "Student not found" is displayed.
+•This operation uses linear search.
+
+d) Modifying a Student
+•The user enters a Roll Number.
+•The list is traversed sequentially.
+
+If the student is found:
+•New details are entered.
+•Existing values in the node are updated.
+
+If not found:
+"Student not found" message is shown.
+
+4. Memory Management
+Memory for each student is allocated dynamically using new.
+•Nodes are connected using pointers.
+
+(Note: No deletion operation is implemented.)
+
+5. Program Termination
+When the user selects option 4 (Exit):
+
+The loop terminates.
+
+The program ends.
+
+6. Conclusion
+The program efficiently manages student records using a linked list, enabling dynamic storage and easy insertion, searching, and updating of records.
