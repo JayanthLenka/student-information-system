@@ -1,0 +1,65 @@
+ALGORITHM:-
+Step 1: Start
+Step 2: Display Menu
+Show options:
+1.Add Student
+2.View Student
+3.Modify Student
+4.Exit
+
+Step 3: Enter Choice
+Read user choice
+
+Step 4: Perform Operation
+If Choice = 1 (Add Student)
+Select Add Student
+
+Input student details:
+Roll No
+Name
+Aadhaar No
+Phone No
+Email
+•Add student to linked list
+•Display "Student Added Successfully"
+
+•Go back to Step 2
+
+If Choice = 2 (View Student)
+Select View Student
+
+•Search student by Roll No
+
+If student found:
+
+Display student details
+
+Else:
+
+Display "Student Not Found"
+
+•Go back to Step 2
+
+If Choice = 3 (Modify Student)
+Select Modify Student
+
+•Search student by Roll No
+
+If student found:
+
+Update student details
+
+Display "Details Updated"
+
+Else:
+
+Display "Student Not Found"
+
+•Go back to Step 2
+
+If Choice = 4 (Exit)
+Go to End
+
+Step 5: End
+
+FLOWCHART:-
